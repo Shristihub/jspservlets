@@ -1,0 +1,35 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Welcome in JSP</h1>
+<%
+String name = (String)request.getAttribute("uname");
+out.println("Hi "+name+"<br>");
+String city = (String)request.getAttribute("city");
+out.println("City "+city+"<br>");
+String lan = (String)request.getAttribute("lan");
+out.println("Language "+lan+"<br>");
+Long mobile = (Long)request.getAttribute("mobile");
+out.println("Mobile "+mobile+"<br>");
+String[] hobbies = (String[])request.getAttribute("hobbies");
+if(hobbies!=null){
+	for(String hob:hobbies){
+		out.println("Hobby "+hob+"<br>");		
+	}
+}
+
+
+
+
+
+
+%>
+
+</body>
+</html>
