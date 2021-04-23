@@ -22,7 +22,6 @@
  ${message}<a href="/BookAppDBNew">Home</a>
 </c:when>
 <c:otherwise>
-<form >
 <table>
   <tr>
     <th>Title</th>
@@ -34,16 +33,19 @@
   </tr>
 <c:forEach var="book" items="${bookList }">
   <tr>
+<form action = "viewServlet">
     <td>${book.title }</td>
     <td>${book.author }</td>
     <td>${book.category }</td>
     <td>${book.price}</td>
     <td><input type="hidden" value = "${book.bookid}" name="bookid"></td> 
-    <td><input type="submit" value="View" action = "viewServlet"></td>
+    <td><input type="submit" value="View"></td>
+</form>
   </tr>
+
   </c:forEach>
 </table>
-</form>
+
 
 </c:otherwise>
 </c:choose>
